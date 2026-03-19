@@ -8,4 +8,73 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: 'Cormorant Garamond', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+@layer base {
+    :root {
+        color-scheme: dark;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply antialiased;
+    }
+
+    ::selection {
+        @apply bg-emerald-400 text-zinc-950;
+    }
+
+    a {
+        @apply underline-offset-4;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        @apply outline-none ring-2 ring-emerald-300/70 ring-offset-2 ring-offset-zinc-950;
+    }
+}
+
+@layer components {
+    .card {
+        @apply rounded-2xl border border-zinc-800/80 bg-zinc-900/30 shadow-sm shadow-black/20;
+    }
+
+    .card-hover {
+        @apply transition hover:border-zinc-700 hover:bg-zinc-900/40;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition;
+    }
+
+    .btn-primary {
+        @apply bg-emerald-500 text-zinc-950 hover:bg-emerald-400;
+    }
+
+    .btn-secondary {
+        @apply border border-zinc-800 text-zinc-100 hover:border-zinc-700 hover:text-amber-200;
+    }
+
+    .btn-ghost {
+        @apply text-zinc-300 hover:text-white;
+    }
+
+    .field {
+        @apply w-full rounded-xl border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm text-zinc-100;
+    }
+
+    .label {
+        @apply text-sm text-zinc-300;
+    }
+
+    .help {
+        @apply text-sm text-zinc-400;
+    }
 }

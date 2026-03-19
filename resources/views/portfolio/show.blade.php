@@ -1,0 +1,40 @@
+@extends('layouts.app')
+
+@section('title', $artwork->title.' · Portfolio · '.config('app.name'))
+
+@section('content')
+    <div class="flex items-center justify-between gap-4">
+        <div>
+            <h1 class="text-3xl font-semibold tracking-tight">{{ $artwork->title }}</h1>
+            <p class="mt-2 text-sm text-zinc-400">
+                @if ($artwork->year) {{ $artwork->year }} @endif
+            </p>
+        </div>
+        <a href="{{ route('portfolio.index') }}" class="text-sm text-zinc-300 hover:text-white">Back</a>
+    </div>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+            <div class="card overflow-hidden">
+                <div class="bg-zinc-950 p-3 sm:p-4">
+                    @if ($artwork->image_path)
+                        <img class="mx-auto max-h-[75vh] w-full object-contain" src="{{ asset('storage/'.$artwork->image_path) }}" alt="{{ $artwork->title }}">
+                    @else
+                        <div class="flex h-64 items-center justify-center text-sm text-zinc-500">No image</div>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5">
+            <div class="card p-6">
+                <h2 class="text-lg font-semibold">Details</h2>
+                @if ($artwork->description)
+                    <div class="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-zinc-300">{{ $artwork->description }}</div>
+                @else
+                    <div class="mt-4 text-sm text-zinc-500">No description yet.</div>
+                @endif
+            </div>
+        </div>
+    </div>
+@endsection
