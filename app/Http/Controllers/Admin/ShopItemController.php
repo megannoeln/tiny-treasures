@@ -17,7 +17,6 @@ class ShopItemController extends Controller
         $items = Artwork::query()
             ->where('is_for_sale', true)
             ->orderBy('is_sold')
-            ->orderBy('sort_order')
             ->orderByDesc('created_at')
             ->paginate(20);
 
@@ -34,7 +33,8 @@ class ShopItemController extends Controller
         $data = $request->validated();
         $data['slug'] = UniqueSlug::make(Artwork::class, $data['title']);
 
-        unset($data['is_for_sale'], $data['is_sold'], $data['year'], $data['sort_order']);
+        $data['is_featured'] = $request->boolean('is_featured');
+        unset($data['is_for_sale'], $data['is_sold'], $data['year']);
         $data['is_for_sale'] = true;
         $data['is_sold'] = $request->boolean('is_sold');
         $data['price_cents'] = $this->priceToCents($data['price'] ?? null);
@@ -63,7 +63,8 @@ class ShopItemController extends Controller
         $data = $request->validated();
         unset($data['slug']);
 
-        unset($data['is_for_sale'], $data['is_sold'], $data['year'], $data['sort_order']);
+        $data['is_featured'] = $request->boolean('is_featured');
+        unset($data['is_for_sale'], $data['is_sold'], $data['year']);
         $data['is_for_sale'] = true;
         $data['is_sold'] = $request->boolean('is_sold');
         $data['price_cents'] = $this->priceToCents($data['price'] ?? null);

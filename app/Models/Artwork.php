@@ -15,8 +15,8 @@ class Artwork extends Model
         'slug',
         'description',
         'year',
-        'sort_order',
         'image_path',
+        'is_featured',
         'is_for_sale',
         'price_cents',
         'is_sold',
@@ -24,7 +24,7 @@ class Artwork extends Model
 
     protected $casts = [
         'year' => 'integer',
-        'sort_order' => 'integer',
+        'is_featured' => 'boolean',
         'is_for_sale' => 'boolean',
         'price_cents' => 'integer',
         'is_sold' => 'boolean',

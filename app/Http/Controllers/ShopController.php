@@ -16,7 +16,6 @@ class ShopController extends Controller
         $items = Artwork::query()
             ->where('is_for_sale', true)
             ->orderBy('is_sold')
-            ->orderBy('sort_order')
             ->orderByDesc('created_at')
             ->paginate(24);
 

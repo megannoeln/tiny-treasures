@@ -10,7 +10,6 @@ class PortfolioController extends Controller
     {
         $artworks = Artwork::query()
             ->where('is_for_sale', false)
-            ->orderBy('sort_order')
             ->orderByDesc('created_at')
             ->paginate(24);
 

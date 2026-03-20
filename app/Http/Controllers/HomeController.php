@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         $featuredItems = Artwork::query()
+            ->where('is_featured', true)
             ->where(function ($query) {
                 $query
                     ->where('is_for_sale', false)
@@ -19,7 +20,6 @@ class HomeController extends Controller
                         $q->where('is_for_sale', true)->where('is_sold', false);
                     });
             })
-            ->orderBy('sort_order')
             ->orderByDesc('created_at')
             ->take(8)
             ->get();

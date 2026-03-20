@@ -18,7 +18,7 @@ class UpdateArtworkRequest extends FormRequest
             'slug' => ['nullable', 'string', 'max:220'],
             'description' => ['nullable', 'string'],
             'year' => ['nullable', 'integer', 'min:0', 'max:3000'],
-            'sort_order' => ['nullable', 'integer', 'min:0', 'max:1000000'],
+            'is_featured' => ['nullable', 'boolean'],
             'is_for_sale' => ['nullable', 'boolean'],
             'is_sold' => ['nullable', 'boolean'],
             'price' => ['nullable', 'numeric', 'min:0', 'max:1000000'],
