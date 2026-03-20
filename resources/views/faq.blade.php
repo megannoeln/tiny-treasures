@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="max-w-3xl">
-        <h1 class="text-3xl font-semibold tracking-tight">FAQ</h1>
+        <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">FAQ</h1>
         <div class="mt-8 space-y-6">
             <div class="rounded-xl border border-zinc-800 bg-zinc-900/30 p-6">
                 <h2 class="font-semibold">Do you take commissions?</h2>

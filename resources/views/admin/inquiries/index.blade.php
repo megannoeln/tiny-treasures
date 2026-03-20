@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Inquiries</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Inquiries</h1>
             <p class="mt-1 text-sm text-zinc-400">Messages sent from the contact form.</p>
         </div>
     </div>

@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex flex-col gap-6">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Dashboard</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Dashboard</h1>
             <p class="mt-1 text-sm text-zinc-400">Quick links to manage your content.</p>
         </div>
 

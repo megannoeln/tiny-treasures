@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Meet the owner · '.config('app.name'))
+@section('title', 'About · '.config('app.name'))
 
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-3xl font-semibold tracking-tight">Meet the owner</h1>
+            <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">About</h1>
         </div>
-        <a href="{{ route('home') }}" class="btn btn-secondary no-underline">Back</a>
+        <a href="{{ route('home') }}" class="btn btn-secondary no-underline hover:text-[#5a3f66]">Back</a>
     </div>
 
     <div class="mt-8 flex justify-center">

@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex items-end justify-between gap-4">
         <div>
-            <h1 class="text-3xl font-semibold tracking-tight">Portfolio</h1>
+            <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">Portfolio</h1>
             <p class="mt-2 text-sm text-zinc-400">Custom work and past pieces.</p>
         </div>
     </div>

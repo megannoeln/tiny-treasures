@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <h1 class="text-3xl font-semibold tracking-tight">Classes</h1>
+        <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">Classes</h1>
         <p class="mt-2 text-sm text-zinc-400">Details and signups.</p>
     </div>
 
@@ -25,7 +25,7 @@
                             <div class="mt-2 text-sm text-zinc-400">${{ number_format((float) $class->price, 2) }}</div>
                         @endif
                     </div>
-                    <div class="text-sm text-emerald-300">Open →</div>
+                    <div class="text-sm text-[#5a3f66]">Details →</div>
                 </div>
             </a>
         @empty

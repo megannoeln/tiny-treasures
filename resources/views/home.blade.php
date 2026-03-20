@@ -3,20 +3,11 @@
 @section('title', config('app.name'))
 
 @section('content')
-    <section id="about" class="scroll-mt-28">
-        <div class="mx-auto max-w-3xl text-center">
-            <h1 class="font-serif text-5xl font-semibold tracking-wide">About</h1>
-            <p class="mt-4 text-lg leading-relaxed text-zinc-300">
-                Located in Youngstown OH. Ethically and locally sourced. Bugs, bones & oddity miniatures.
-            </p>
-        </div>
-    </section>
-
     @if ($featuredItems->count())
-        <section class="mt-16">
+        <section>
             <div class="flex items-end justify-between gap-4">
                 <div>
-                    <h2 class="font-serif text-3xl font-semibold tracking-wide">Featured work</h2>
+                    <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">Featured artwork</h2>
                     <p class="mt-2 text-sm text-zinc-400">A few personal favorites.</p>
                 </div>
             </div>
@@ -35,13 +26,13 @@
                             @endif
                         </div>
                         <div class="p-4">
-                            <div class="text-xs font-semibold uppercase tracking-wide {{ $item->is_for_sale ? 'text-amber-300' : 'text-emerald-300' }}">
+                            <div class="inline-flex rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide {{ $item->is_for_sale ? 'border-[#5a3f66]/50 bg-[#5a3f66]/15 text-[#c8b6d1]' : 'border-[#c7a867]/45 bg-[#c7a867]/12 text-[#dfcea0]' }}">
                                 {{ $item->is_for_sale ? 'Shop' : 'Portfolio' }}
                             </div>
                             <div class="mt-1 font-medium">{{ $item->title }}</div>
-                            @if ($item->is_for_sale && $item->price_cents !== null)
-                                <div class="text-sm text-zinc-400">${{ number_format($item->price_cents / 100, 2) }}</div>
-                            @endif
+                            <div class="mt-3 text-xs font-semibold tracking-wide text-zinc-300 opacity-0 translate-y-1 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                View details →
+                            </div>
                         </div>
                     </a>
                 @endforeach
@@ -52,7 +43,7 @@
     <section id="upcoming" class="mt-16 scroll-mt-28">
         <div class="flex items-end justify-between gap-4">
             <div>
-                <h2 class="font-serif text-3xl font-semibold tracking-wide">Upcoming</h2>
+                <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">Upcoming</h2>
                 <p class="mt-2 text-sm text-zinc-400">These are the places you will find us soon!</p>
             </div>
         </div>
@@ -65,7 +56,7 @@
                 <div class="card p-4">
                     <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                            <div class="text-xs font-semibold uppercase tracking-wide {{ $item['type'] === 'class' ? 'text-emerald-300' : 'text-amber-300' }}">
+                            <div class="text-xs font-semibold uppercase tracking-wide {{ $item['type'] === 'class' ? 'text-[#c7a867]' : 'text-[#5a3f66]' }}">
                                 {{ $item['type'] === 'class' ? 'Class' : 'Event' }}
                             </div>
                             <div class="mt-1 font-semibold">{{ $item['title'] }}</div>
@@ -78,7 +69,7 @@
                             @if ($href)
                                 <a
                                     href="{{ $href }}"
-                                    class="btn btn-secondary px-3 py-1.5 no-underline"
+                                    class="btn btn-secondary px-3 py-1.5 no-underline {{ $item['type'] === 'class' ? 'hover:text-[#c7a867]' : 'hover:text-[#5a3f66]' }}"
                                     @if ($item['type'] === 'event') target="_blank" rel="noreferrer" @endif
                                 >Details</a>
                             @else
@@ -95,7 +86,7 @@
 
     <section id="faq" class="mt-16 scroll-mt-28">
         <div class="max-w-3xl">
-            <h2 class="font-serif text-3xl font-semibold tracking-wide">FAQ</h2>
+            <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">FAQ</h2>
             <div class="mt-8 space-y-4">
                 <div class="card p-6">
                     <h3 class="font-semibold">Do you take commissions?</h3>
@@ -116,7 +107,7 @@
     <section id="contact" class="mt-16 scroll-mt-28">
         <div class="grid gap-8 lg:grid-cols-12">
             <div class="lg:col-span-5">
-                <h2 class="font-serif text-3xl font-semibold tracking-wide">Contact</h2>
+                <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">Contact</h2>
                 <p class="mt-3 text-sm text-zinc-400">Let's chat about a commission idea, or general questions.</p>
                 <p class="mt-3 text-sm text-zinc-400">
                     Feel free to reach out to my Instagram or Facebook as well.

@@ -36,7 +36,6 @@ class ShopController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ['nullable', 'string', 'max:200'],
             'email' => ['required', 'email', 'max:200'],
-            'message' => ['nullable', 'string', 'max:5000'],
             'website' => ['nullable', 'string', 'max:200'], // honeypot
         ]);
 
@@ -58,7 +57,11 @@ class ShopController extends Controller
             'type' => 'purchase',
             'name' => $validated['name'] ?: null,
             'email' => $validated['email'],
-            'message' => $validated['message'] ?: 'Request to purchase',
+            'message' => trim(implode("\n\n", array_filter([
+                'Purchase request for: '.$artwork->title,
+                $artwork->price_cents !== null ? 'Price: $'.number_format($artwork->price_cents / 100, 2) : 'Price: on request',
+                $artwork->description ? 'Item description: '.$artwork->description : null,
+            ]))),
         ]);
 
         $to = config('brand.inquiry_to_email') ?: config('mail.from.address');

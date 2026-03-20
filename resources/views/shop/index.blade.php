@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex items-end justify-between gap-4">
         <div>
-            <h1 class="font-serif text-3xl font-semibold tracking-wide">Shop</h1>
+            <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">Shop</h1>
             <p class="mt-2 text-sm text-zinc-400">Items currently available. No checkout — just request to purchase.</p>
         </div>
     </div>
@@ -40,9 +40,9 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="text-sm font-semibold {{ $item->is_sold ? 'text-stone-400' : 'text-amber-300' }}">
-                            {{ $item->is_sold ? 'Sold' : 'Request →' }}
-                        </div>
+                        @if ($item->is_sold)
+                            <div class="text-sm font-semibold text-stone-400">Sold</div>
+                        @endif
                     </div>
                 </div>
             </a>

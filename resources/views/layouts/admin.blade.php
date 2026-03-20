@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title', 'Admin') · {{ config('app.name') }}</title>
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|cormorant-garamond:400,500,600" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|cinzel:400,500,600" rel="stylesheet" />
 
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -23,7 +25,7 @@
             </style>
         @endif
     </head>
-    <body class="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-emerald-400 selection:text-zinc-950">
+    <body class="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-[#b08a47] selection:text-zinc-950">
         <header class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur">
             <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
                 <div class="flex items-center gap-4">
@@ -49,7 +51,7 @@
 
         <main class="mx-auto max-w-6xl px-4 py-8">
             @if (session('status'))
-                <div class="mb-6 rounded-lg border border-emerald-900/60 bg-emerald-950/30 px-4 py-3 text-emerald-100">
+                <div class="mb-6 rounded-lg border border-[#7a6230]/60 bg-[#332a1a]/60 px-4 py-3 text-[#e8d9b0]">
                     {{ session('status') }}
                 </div>
             @endif

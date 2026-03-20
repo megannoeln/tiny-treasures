@@ -5,10 +5,10 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Shop</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Shop</h1>
             <p class="mt-1 text-sm text-zinc-400">Items for sale on the public Shop page.</p>
         </div>
-        <a href="{{ route('admin.shop.create') }}" class="rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-emerald-400">New</a>
+        <a href="{{ route('admin.shop.create') }}" class="rounded-md bg-[#7a6230] px-4 py-2 text-sm font-semibold text-[#f5ecd3] hover:bg-[#8c733b]">New</a>
     </div>
 
     <div class="mt-6 overflow-hidden rounded-xl border border-zinc-800">
@@ -19,6 +19,7 @@
                     <th class="px-4 py-3">Description</th>
                     <th class="px-4 py-3">Price</th>
                     <th class="px-4 py-3">Status</th>
+                    <th class="px-4 py-3">Featured</th>
                     <th class="px-4 py-3">Image</th>
                     <th class="px-4 py-3"></th>
                 </tr>
@@ -47,6 +48,9 @@
                             {{ $item->is_sold ? 'Sold' : 'For sale' }}
                         </td>
                         <td class="px-4 py-3 text-zinc-300">
+                            {{ $item->is_featured ? 'Yes' : '—' }}
+                        </td>
+                        <td class="px-4 py-3 text-zinc-300">
                             @if ($item->image_path)
                                 <img class="h-10 w-10 rounded-lg object-cover" src="{{ asset('storage/'.$item->image_path) }}" alt="" />
                             @else
@@ -66,7 +70,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td class="px-4 py-6 text-zinc-400" colspan="6">No shop items yet.</td>
+                        <td class="px-4 py-6 text-zinc-400" colspan="7">No shop items yet.</td>
                     </tr>
                 @endforelse
             </tbody>

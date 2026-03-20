@@ -5,10 +5,10 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Portfolio</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Portfolio</h1>
             <p class="mt-1 text-sm text-zinc-400">Artwork items that are not for sale.</p>
         </div>
-        <a href="{{ route('admin.portfolio.create') }}" class="rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-emerald-400">New</a>
+        <a href="{{ route('admin.portfolio.create') }}" class="rounded-md bg-[#7a6230] px-4 py-2 text-sm font-semibold text-[#f5ecd3] hover:bg-[#8c733b]">New</a>
     </div>
 
     <div class="mt-6 overflow-hidden rounded-xl border border-zinc-800">
@@ -17,6 +17,7 @@
                 <tr>
                     <th class="px-4 py-3">Title</th>
                     <th class="px-4 py-3">Description</th>
+                    <th class="px-4 py-3">Featured</th>
                     <th class="px-4 py-3">Image</th>
                     <th class="px-4 py-3"></th>
                 </tr>
@@ -33,6 +34,9 @@
                             @else
                                 —
                             @endif
+                        </td>
+                        <td class="px-4 py-3 text-zinc-300">
+                            {{ $artwork->is_featured ? 'Yes' : '—' }}
                         </td>
                         <td class="px-4 py-3 text-zinc-300">
                             @if ($artwork->image_path)
@@ -54,7 +58,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td class="px-4 py-6 text-zinc-400" colspan="4">No portfolio items yet.</td>
+                        <td class="px-4 py-6 text-zinc-400" colspan="5">No portfolio items yet.</td>
                     </tr>
                 @endforelse
             </tbody>

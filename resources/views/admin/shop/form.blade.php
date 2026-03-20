@@ -5,12 +5,12 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">
                 {{ $item->exists ? 'Edit Shop Item' : 'New Shop Item' }}
             </h1>
             <p class="mt-1 text-sm text-zinc-400">These items appear on the public Shop page.</p>
         </div>
-        <a href="{{ route('admin.shop.index') }}" class="text-sm text-zinc-300 hover:text-white">Back</a>
+        <a href="{{ route('admin.shop.index') }}" class="text-sm text-zinc-300 hover:text-[#5a3f66]">Back</a>
     </div>
 
     <form class="mt-6 space-y-6 rounded-xl border border-zinc-800 bg-zinc-900/30 p-6"
@@ -43,6 +43,14 @@
                     <input type="checkbox" name="is_sold" value="1" {{ old('is_sold', (bool) $item->is_sold) ? 'checked' : '' }}
                         class="rounded border-zinc-700 bg-zinc-950">
                     Sold
+                </label>
+            </div>
+
+            <div class="flex items-end">
+                <label class="flex items-center gap-2 text-sm text-zinc-300">
+                    <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', (bool) $item->is_featured) ? 'checked' : '' }}
+                        class="rounded border-zinc-700 bg-zinc-950">
+                    Featured
                 </label>
             </div>
 

@@ -57,9 +57,8 @@ Route::post('/classes/{classListing}/signup', [ClassController::class, 'signup']
     ->middleware('throttle:class-signup')
     ->name('classes.signup');
 
-Route::view('/meet-the-owner', 'owner')->name('owner');
-
-Route::get('/about', fn () => redirect()->to(route('home').'#about'))->name('about');
+Route::view('/about', 'owner')->name('about');
+Route::get('/meet-the-owner', fn () => redirect()->route('about'))->name('owner');
 Route::get('/faq', fn () => redirect()->to(route('home').'#faq'))->name('faq');
 Route::get('/contact', function (Request $request) {
     $type = $request->query('type');

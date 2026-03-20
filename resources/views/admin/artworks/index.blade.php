@@ -5,10 +5,10 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Artwork</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Artwork</h1>
             <p class="mt-1 text-sm text-zinc-400">Portfolio items.</p>
         </div>
-        <a href="{{ route('admin.artworks.create') }}" class="rounded-md bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-emerald-400">New</a>
+        <a href="{{ route('admin.artworks.create') }}" class="rounded-md bg-[#7a6230] px-4 py-2 text-sm font-semibold text-[#f5ecd3] hover:bg-[#8c733b]">New</a>
     </div>
 
     <div class="mt-6 overflow-hidden rounded-xl border border-zinc-800">

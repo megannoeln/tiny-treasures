@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Attendees</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Attendees</h1>
             <p class="mt-1 text-sm text-zinc-400">
                 {{ $classListing->title }} ·
                 {{ $classListing->starts_at?->format('Y-m-d H:i') }}
@@ -14,7 +14,7 @@
                 @endif
             </p>
         </div>
-        <a href="{{ route('admin.classes.index') }}" class="text-sm text-zinc-300 hover:text-white">Back</a>
+        <a href="{{ route('admin.classes.index') }}" class="text-sm text-zinc-300 hover:text-[#5a3f66]">Back</a>
     </div>
 
     <div class="mt-6 overflow-hidden rounded-xl border border-zinc-800">

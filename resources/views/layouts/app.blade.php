@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title', config('app.name'))</title>
+        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|cormorant-garamond:400,500,600" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|cinzel:400,500,600" rel="stylesheet" />
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -23,14 +25,26 @@
             </style>
         @endif
     </head>
-    <body class="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-emerald-400 selection:text-zinc-950">
+    <body class="min-h-screen bg-zinc-950 text-zinc-100 selection:bg-[#b08a47] selection:text-zinc-950">
         <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-zinc-950 focus:px-4 focus:py-2">
             Skip to content
         </a>
 
         <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-            <div class="absolute -top-24 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl"></div>
-            <div class="absolute top-1/2 right-[-10rem] h-[26rem] w-[26rem] -translate-y-1/2 rounded-full bg-amber-500/10 blur-3xl"></div>
+            <svg class="absolute inset-0 h-full w-full opacity-75" viewBox="0 0 1200 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#e8d9b0">
+                    <path d="M112 126 L116 136 L126 140 L116 144 L112 154 L108 144 L98 140 L108 136 Z" opacity="0.75" />
+                    <path d="M278 562 L281 569 L288 572 L281 575 L278 582 L275 575 L268 572 L275 569 Z" opacity="0.6" />
+                    <path d="M388 228 L392 238 L402 242 L392 246 L388 256 L384 246 L374 242 L384 238 Z" opacity="0.7" />
+                    <path d="M534 666 L537 673 L544 676 L537 679 L534 686 L531 679 L524 676 L531 673 Z" opacity="0.58" />
+                    <path d="M646 182 L650 192 L660 196 L650 200 L646 210 L642 200 L632 196 L642 192 Z" opacity="0.78" />
+                    <path d="M744 514 L747 521 L754 524 L747 527 L744 534 L741 527 L734 524 L741 521 Z" opacity="0.55" />
+                    <path d="M862 274 L866 284 L876 288 L866 292 L862 302 L858 292 L848 288 L858 284 Z" opacity="0.66" />
+                    <path d="M972 618 L975 625 L982 628 L975 631 L972 638 L969 631 L962 628 L969 625 Z" opacity="0.56" />
+                    <path d="M1058 196 L1062 206 L1072 210 L1062 214 L1058 224 L1054 214 L1044 210 L1054 206 Z" opacity="0.72" />
+                    <path d="M1132 436 L1135 443 L1142 446 L1135 449 L1132 456 L1129 449 L1122 446 L1129 443 Z" opacity="0.62" />
+                </g>
+            </svg>
         </div>
 
         <header class="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur">
@@ -67,17 +81,17 @@
                 @endphp
                 <a href="{{ route('home') }}" class="flex items-center gap-3 font-semibold tracking-tight no-underline hover:opacity-95">
                     @if ($hasLogo)
-                        <img src="{{ asset($logoPath) }}" alt="{{ config('app.name') }} logo" class="h-10 w-10 rounded-xl object-cover ring-1 ring-zinc-800" decoding="async" />
+                        <img src="{{ asset($logoPath) }}" alt="{{ config('app.name') }} logo" class="h-11 w-11 rounded-xl object-cover ring-1 ring-zinc-800" decoding="async" />
                     @endif
-                    <span class="font-serif text-xl tracking-wide">{{ config('app.name') }}</span>
+                    <span class="font-serif text-lg tracking-wide">{{ config('app.name') }}</span>
                 </a>
 
                 <nav class="hidden items-center gap-5 text-sm text-zinc-300 sm:flex">
-                    <a class="no-underline hover:text-white" href="{{ route('portfolio.index') }}">Portfolio</a>
-                    <a class="no-underline hover:text-white" href="{{ route('shop.index') }}">Shop</a>
-                    <a class="no-underline hover:text-white" href="{{ route('classes.index') }}">Classes</a>
-                    <a class="no-underline hover:text-white" href="{{ route('owner') }}">Meet the owner</a>
-                    <a class="no-underline hover:text-white" href="{{ route('home') }}#contact">Contact</a>
+                    <a class="no-underline hover:text-[#5a3f66]" href="{{ route('portfolio.index') }}">Portfolio</a>
+                    <a class="no-underline hover:text-[#5a3f66]" href="{{ route('shop.index') }}">Shop</a>
+                    <a class="no-underline hover:text-[#5a3f66]" href="{{ route('classes.index') }}">Classes</a>
+                    <a class="no-underline hover:text-[#5a3f66]" href="{{ route('about') }}">About</a>
+                    <a class="no-underline hover:text-[#5a3f66]" href="{{ route('home') }}#contact">Contact</a>
                 </nav>
 
                 <div class="flex items-center gap-1">
@@ -113,11 +127,11 @@
             <div class="hidden border-t border-zinc-800 bg-zinc-950/95 sm:hidden" id="mobile-nav" data-mobile-nav>
                 <nav class="mx-auto max-w-6xl px-4 py-4 text-sm text-zinc-200">
                     <div class="grid gap-2">
-                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40" href="{{ route('portfolio.index') }}">Portfolio</a>
-                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40" href="{{ route('shop.index') }}">Shop</a>
-                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40" href="{{ route('classes.index') }}">Classes</a>
-                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40" href="{{ route('owner') }}">Meet the owner</a>
-                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40" href="{{ route('home') }}#contact">Contact</a>
+                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('portfolio.index') }}">Portfolio</a>
+                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('shop.index') }}">Shop</a>
+                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('classes.index') }}">Classes</a>
+                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('about') }}">About</a>
+                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('home') }}#contact">Contact</a>
                     </div>
                 </nav>
             </div>
@@ -125,9 +139,9 @@
 
         <main id="content" class="mx-auto max-w-6xl px-4 py-10">
             @if (session('status'))
-                <div data-flash class="mb-6 flex items-start justify-between gap-4 rounded-2xl border border-emerald-900/60 bg-emerald-950/30 px-4 py-3 text-emerald-100">
+                <div data-flash class="mb-6 flex items-start justify-between gap-4 rounded-2xl border border-[#7a6230]/60 bg-[#332a1a]/60 px-4 py-3 text-[#e8d9b0]">
                     <div>{{ session('status') }}</div>
-                    <button type="button" class="btn btn-ghost -my-1 -mr-2 px-2 py-1 text-emerald-100/90" data-flash-close>Close</button>
+                    <button type="button" class="btn btn-ghost -my-1 -mr-2 px-2 py-1 text-[#e8d9b0]/90" data-flash-close>Close</button>
                 </div>
             @endif
 
@@ -139,12 +153,12 @@
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div>© {{ now()->year }} {{ config('app.name') }}</div>
                     <div class="flex items-center gap-4">
-                        <a class="no-underline hover:text-emerald-200" href="{{ config('brand.instagram_url', '#') }}" target="_blank" rel="noreferrer">Instagram</a>
-                        <a class="no-underline hover:text-amber-200" href="{{ config('brand.facebook_url', '#') }}" target="_blank" rel="noreferrer">Facebook</a>
+                        <a class="no-underline hover:text-[#5a3f66]" href="{{ config('brand.instagram_url', '#') }}" target="_blank" rel="noreferrer">Instagram</a>
+                        <a class="no-underline hover:text-[#5a3f66]" href="{{ config('brand.facebook_url', '#') }}" target="_blank" rel="noreferrer">Facebook</a>
                         @auth
-                            <a class="no-underline hover:text-zinc-200" href="{{ route('admin.dashboard') }}">Admin</a>
+                            <a class="no-underline hover:text-[#5a3f66]" href="{{ route('admin.dashboard') }}">Admin</a>
                         @else
-                            <a class="no-underline hover:text-zinc-200" href="{{ route('admin.login') }}">Admin</a>
+                            <a class="no-underline hover:text-[#5a3f66]" href="{{ route('admin.login') }}">Admin</a>
                         @endauth
                     </div>
                 </div>

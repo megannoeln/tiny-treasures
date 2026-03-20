@@ -8,7 +8,7 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-serif: 'Cormorant Garamond', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-serif: 'Cinzel', 'Cormorant Garamond', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
 @layer base {
@@ -25,7 +25,7 @@
     }
 
     ::selection {
-        @apply bg-emerald-400 text-zinc-950;
+        @apply bg-[#b08a47] text-zinc-950;
     }
 
     a {
@@ -37,7 +37,7 @@
     input:focus-visible,
     textarea:focus-visible,
     select:focus-visible {
-        @apply outline-none ring-2 ring-emerald-300/70 ring-offset-2 ring-offset-zinc-950;
+        @apply outline-none ring-2 ring-[#a38246]/70 ring-offset-2 ring-offset-zinc-950;
     }
 }
 
@@ -55,7 +55,7 @@
     }
 
     .btn-primary {
-        @apply bg-emerald-500 text-zinc-950 hover:bg-emerald-400;
+        @apply bg-[#7a6230] text-[#f5ecd3] hover:bg-[#8c733b];
     }
 
     .btn-secondary {

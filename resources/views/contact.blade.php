@@ -5,7 +5,7 @@
 @section('content')
     <div class="grid gap-8 lg:grid-cols-12">
         <div class="lg:col-span-6">
-            <h1 class="text-3xl font-semibold tracking-tight">Contact</h1>
+            <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">Contact</h1>
             <p class="mt-3 text-sm text-zinc-400">Commission requests or general questions.</p>
 
             <div class="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/30 p-6">

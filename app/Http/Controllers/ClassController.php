@@ -29,7 +29,7 @@ class ClassController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:200'],
             'email' => ['required', 'email', 'max:200'],
-            'message' => ['nullable', 'string', 'max:5000'],
+            'attendees' => ['required', 'integer', 'min:1', 'max:20'],
             'website' => ['nullable', 'string', 'max:200'], // honeypot
         ]);
 
@@ -49,7 +49,8 @@ class ClassController extends Controller
                 'Class: '.$classListing->title,
                 'When: '.$classListing->starts_at?->format('M j, Y · g:ia'),
                 $classListing->location ? 'Where: '.$classListing->location : null,
-                ($validated['message'] ?? null) ? 'Message: '.$validated['message'] : null,
+                'Attendees: '.$validated['attendees'],
+                $classListing->description ? 'Class description: '.$classListing->description : null,
             ]))),
         ]);
 

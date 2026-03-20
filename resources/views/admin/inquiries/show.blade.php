@@ -5,10 +5,10 @@
 @section('content')
     <div class="flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-semibold tracking-tight">Inquiry</h1>
+            <h1 class="font-serif text-[1.4rem] font-semibold tracking-wide">Inquiry</h1>
             <p class="mt-1 text-sm text-zinc-400">{{ ucfirst($inquiry->type) }} · {{ $inquiry->created_at?->format('Y-m-d H:i') }}</p>
         </div>
-        <a href="{{ route('admin.inquiries.index') }}" class="text-sm text-zinc-300 hover:text-white">Back</a>
+        <a href="{{ route('admin.inquiries.index') }}" class="text-sm text-zinc-300 hover:text-[#5a3f66]">Back</a>
     </div>
 
     <div class="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/30 p-6">

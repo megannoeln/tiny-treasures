@@ -5,7 +5,7 @@
 @section('content')
     <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-            <h1 class="text-3xl font-semibold tracking-tight">Calendar</h1>
+            <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">Calendar</h1>
             <p class="mt-2 text-sm text-zinc-400">Upcoming markets and classes.</p>
         </div>
 
@@ -37,7 +37,7 @@
                             <div class="mt-2 space-y-1">
                                 @foreach ($day['items'] as $item)
                                     <a href="{{ $item['url'] }}" class="block truncate rounded-md border border-zinc-800 bg-zinc-900/30 px-2 py-1 text-xs text-zinc-200 hover:border-zinc-700">
-                                        <span class="font-semibold {{ $item['type'] === 'class' ? 'text-emerald-300' : 'text-amber-300' }}">
+                                        <span class="font-semibold {{ $item['type'] === 'class' ? 'text-[#c7a867]' : 'text-amber-300' }}">
                                             {{ $item['type'] === 'class' ? 'Class' : 'Market' }}
                                         </span>
                                         <span class="text-zinc-300">{{ $item['time'] }}</span>
@@ -58,7 +58,7 @@
             <div class="card p-4">
                 <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                        <div class="text-xs font-semibold uppercase tracking-wide {{ $item['type'] === 'class' ? 'text-emerald-300' : 'text-amber-300' }}">
+                        <div class="text-xs font-semibold uppercase tracking-wide {{ $item['type'] === 'class' ? 'text-[#c7a867]' : 'text-amber-300' }}">
                             {{ $item['type'] }}
                         </div>
                         <div class="mt-1 font-semibold">{{ $item['title'] }}</div>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="mt-2 sm:mt-0">
-                        <a href="{{ $item['url'] }}" class="btn btn-secondary px-3 py-1.5 no-underline">Details</a>
+                        <a href="{{ $item['url'] }}" class="btn btn-secondary px-3 py-1.5 no-underline hover:text-[#5a3f66]">Details</a>
                     </div>
                 </div>
             </div>
