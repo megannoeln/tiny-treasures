@@ -58,6 +58,6 @@ class ClassController extends Controller
             Mail::to($to)->send(new InquiryReceived($inquiry));
         }
 
-        return back()->with('status', 'Thanks! Tiny Treasures will follow up by email to confirm your spot and deposit.');
+        return back()->with('status', 'Thanks! Tiny Treasures will follow up by email to confirm your spot and handle the deposit.');
     }
 }

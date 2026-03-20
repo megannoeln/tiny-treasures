@@ -17,7 +17,7 @@
             <div class="flex items-end justify-between gap-4">
                 <div>
                     <h2 class="font-serif text-3xl font-semibold tracking-wide">Featured work</h2>
-                    <p class="mt-2 text-sm text-zinc-400">A few favorites from the portfolio and shop.</p>
+                    <p class="mt-2 text-sm text-zinc-400">A few personal favorites.</p>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
         <div class="flex items-end justify-between gap-4">
             <div>
                 <h2 class="font-serif text-3xl font-semibold tracking-wide">Upcoming</h2>
-                <p class="mt-2 text-sm text-zinc-400">Markets/events and classes — click for details.</p>
+                <p class="mt-2 text-sm text-zinc-400">These are the places you will find us soon!</p>
             </div>
         </div>
 
@@ -117,9 +117,9 @@
         <div class="grid gap-8 lg:grid-cols-12">
             <div class="lg:col-span-5">
                 <h2 class="font-serif text-3xl font-semibold tracking-wide">Contact</h2>
-                <p class="mt-3 text-sm text-zinc-400">Commission requests or general questions.</p>
+                <p class="mt-3 text-sm text-zinc-400">Let's chat about a commission idea, or general questions.</p>
                 <p class="mt-3 text-sm text-zinc-400">
-                    If you don’t hear back, try Instagram — DMs can be faster during market weekends.
+                    Feel free to reach out to my Instagram or Facebook as well.
                 </p>
             </div>
 
