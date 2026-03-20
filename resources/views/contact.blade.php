@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact · '.config('app.name'))
+@section('title', 'Contact')
 
 @section('content')
     <div class="grid gap-8 lg:grid-cols-12">

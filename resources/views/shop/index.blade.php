@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Shop · '.config('app.name'))
+@section('title', 'Shop')
 
 @section('content')
     <div class="flex items-end justify-between gap-4">

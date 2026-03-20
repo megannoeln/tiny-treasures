@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $classListing->title.' · Classes · '.config('app.name'))
+@section('title', 'Classes')
 
 @section('content')
     <div class="flex items-center justify-between gap-4">

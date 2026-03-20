@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Calendar · '.config('app.name'))
+@section('title', 'Calendar')
 
 @section('content')
     <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">

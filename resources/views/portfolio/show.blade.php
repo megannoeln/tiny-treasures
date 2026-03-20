@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $artwork->title.' · Portfolio · '.config('app.name'))
+@section('title', 'Portfolio')
 
 @section('content')
     @php

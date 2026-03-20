@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', config('app.name'))
+@section('title', 'Tiny Treasures')
 
 @section('content')
     @if ($featuredItems->count())

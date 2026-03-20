@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $item->title.' · Shop · '.config('app.name'))
+@section('title', 'Shop')
 
 @section('content')
     @php

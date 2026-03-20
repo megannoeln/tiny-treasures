@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About · '.config('app.name'))
+@section('title', 'About')
 
 @section('content')
     <div class="max-w-3xl">
