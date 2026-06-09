@@ -55,7 +55,7 @@ class ShopController extends Controller
         $inquiry = Inquiry::create([
             'artwork_id' => $artwork->id,
             'type' => 'purchase',
-            'name' => $validated['name'] ?: null,
+            'name' => $validated['name'] ?? null,
             'email' => $validated['email'],
             'message' => trim(implode("\n\n", array_filter([
                 'Purchase request for: '.$artwork->title,

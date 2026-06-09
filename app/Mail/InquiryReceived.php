@@ -26,6 +26,10 @@ class InquiryReceived extends Mailable
 
         return $this
             ->subject($subject)
+            ->replyTo(
+                $this->inquiry->email,
+                $this->inquiry->name ?? $this->inquiry->email
+            )
             ->view('emails.inquiry-received');
     }
 }
