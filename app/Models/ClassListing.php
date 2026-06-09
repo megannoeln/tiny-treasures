@@ -34,23 +34,4 @@ class ClassListing extends Model
     ];
 
     public $timestamps = false;
-
-    public function attendees()
-    {
-        return $this->hasMany(ClassAttendee::class);
-    }
-
-    public function remainingSeats(): ?int
-    {
-        if ($this->sold_out) {
-            return 0;
-        }
-
-        if ($this->capacity === null) {
-            return null;
-        }
-
-        return max(0, $this->capacity - $this->attendees()->count());
-    }
-
 }
