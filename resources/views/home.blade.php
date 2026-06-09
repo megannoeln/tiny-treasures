@@ -89,16 +89,32 @@
             <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">FAQ</h2>
             <div class="mt-8 space-y-4">
                 <div class="card p-6">
-                    <h3 class="font-semibold">Do you take commissions?</h3>
-                    <p class="mt-2 text-sm text-zinc-300">Yes — use the contact form and choose “Commission”.</p>
-                </div>
-                <div class="card p-6">
-                    <h3 class="font-semibold">Where can I see your work in person?</h3>
-                    <p class="mt-2 text-sm text-zinc-300">Check the upcoming section for markets and events.</p>
+                    <h3 class="font-semibold">Can I request a custom piece?</h3>
+                    <p class="mt-2 text-sm text-zinc-300">Absolutely! Feel free to reach out with your idea using the Contact
+                        form, choose "Commission", and I will let you know if it's something that I can create.
+                    </p>
                 </div>
                 <div class="card p-6">
                     <h3 class="font-semibold">How do class signups work?</h3>
-                    <p class="mt-2 text-sm text-zinc-300">Each class page has a signup form, capped by the listed capacity.</p>
+                    <p class="mt-2 text-sm text-zinc-300">You can use the signup form on the class page and I will respond via email to handle reserving your spot, or you can reach me on Instagram!</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-semibold">Do you offer shipping?</h3>
+                    <p class="mt-2 text-sm text-zinc-300">Yes! Shipping availability may vary by item. Please feel free to
+                     contact me if you have questions about shipping or local pickup!</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-semibold">Are the butterflies and insects real?</h3>
+                    <p class="mt-2 text-sm text-zinc-300">Yes, unless otherwise noted all specimens are real and have been preserved for display.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-semibold">What does sustainably sourced mean?</h3>
+                    <p class="mt-2 text-sm text-zinc-300">Sustainably sourced means all specimens that were not hand-foraged 
+                        of natural passing, were sourced from a licensed entomologist who provides specimens that have reproduced
+                        in captivity for educational purposes and passed naturally. For animals, it means that all bones were hand-foraged
+                        of animals of natural passing. Foraged materials such as moss, ferns, lichens, seed pods, and other natural 
+                        goodies are gathered responsibly using sustainable foraging practices that avoid damaging ecosystems,
+                        disturbing wildlife habitats, or depleting native plant populations.</p>
                 </div>
             </div>
         </div>
@@ -110,7 +126,7 @@
                 <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">Contact</h2>
                 <p class="mt-3 text-sm text-zinc-400">Let's chat about a commission idea, or general questions.</p>
                 <p class="mt-3 text-sm text-zinc-400">
-                    Feel free to reach out to my Instagram or Facebook as well.
+                    Feel free to reach out to my Instagram as well.
                 </p>
             </div>
 
