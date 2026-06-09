@@ -30,7 +30,7 @@ class ContactController extends Controller
         $validated = $validator->validated();
 
         if (($validated['website'] ?? null) !== null && $validated['website'] !== '') {
-            return redirect()->to(route('home').'#contact')->with('status', 'Thanks! Your message was sent.');
+            return redirect()->route('home')->with('status', 'Thanks! Your message was sent.');
         }
 
         $inquiry = Inquiry::create([
@@ -45,6 +45,6 @@ class ContactController extends Controller
             Mail::to($to)->send(new InquiryReceived($inquiry));
         }
 
-        return redirect()->to(route('home').'#contact')->with('status', 'Thanks! Your message was sent.');
+        return redirect()->route('home')->with('status', 'Thanks! Your message was sent.');
     }
 }
