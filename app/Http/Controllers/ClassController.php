@@ -30,6 +30,7 @@ class ClassController extends Controller
             'name' => ['required', 'string', 'max:200'],
             'email' => ['required', 'email', 'max:200'],
             'attendees' => ['required', 'integer', 'min:1', 'max:20'],
+            'questions' =>['nullable', 'string', 'max:200'],
             'website' => ['nullable', 'string', 'max:200'], // honeypot
         ]);
 
@@ -50,7 +51,7 @@ class ClassController extends Controller
                 'When: '.$classListing->starts_at?->format('M j, Y · g:ia'),
                 $classListing->location ? 'Where: '.$classListing->location : null,
                 'Attendees: '.$validated['attendees'],
-                $classListing->description ? 'Class description: '.$classListing->description : null,
+                'Questions: '.$validated['questions'],
             ]))),
         ]);
 

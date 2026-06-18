@@ -101,6 +101,12 @@
                                 @error('attendees')<p class="mt-1 text-sm text-red-300">{{ $message }}</p>@enderror
                             </div>
 
+                            <div>
+                                <label class="label" for="questions">Questions</label>
+                                <textarea id="questions" name="questions" rows="4" required class="field mt-1">{{ old('questions') }}</textarea>
+                                @error('questions')<p class="mt-1 text-sm text-red-300">{{ $message }}</p>@enderror
+                            </div>
+
                             <button type="submit" class="btn btn-primary w-full">
                                 Request to sign up
                             </button>

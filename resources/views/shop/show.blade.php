@@ -57,7 +57,7 @@
                 @if ($showPurchaseCard)
                     <div class="card {{ $showDescription ? 'mt-6' : '' }} p-6">
                         <h2 class="text-lg font-semibold">Request to purchase</h2>
-                        <p class="mt-2 text-sm text-zinc-400">We’ll confirm availability and send details by email.</p>
+                        <p class="mt-2 text-sm text-zinc-400">Details and payment will be handled by email.</p>
 
                         <form class="mt-5 space-y-4" method="POST" action="{{ route('shop.request', $item) }}">
                             @csrf
