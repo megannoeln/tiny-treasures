@@ -6,7 +6,7 @@
     <div class="flex items-end justify-between gap-4">
         <div>
             <h1 class="font-serif text-[1.7rem] font-semibold tracking-wide">Shop</h1>
-            <p class="mt-2 text-sm text-zinc-400">Items currently available. No checkout — just request to purchase.</p>
+            <p class="mt-2 text-sm text-zinc-400">Items currently available.</p>
         </div>
     </div>
 
