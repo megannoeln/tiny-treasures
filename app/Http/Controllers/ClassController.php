@@ -13,6 +13,7 @@ class ClassController extends Controller
     public function index()
     {
         $classes = ClassListing::query()
+            ->where('starts_at', '>=', now())
             ->orderBy('starts_at')
             ->paginate(20);
 
