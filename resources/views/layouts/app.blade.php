@@ -4,8 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title', 'Tiny Treasures')</title>
-        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-        <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+        @php
+            $faviconPath = 'favicon.png';
+            $faviconVersion = is_file(public_path($faviconPath)) ? filemtime(public_path($faviconPath)) : null;
+        @endphp
+        <link rel="icon" type="image/png" href="{{ asset($faviconPath) }}@if($faviconVersion)?v={{ $faviconVersion }}@endif">
+        <link rel="apple-touch-icon" href="{{ asset($faviconPath) }}@if($faviconVersion)?v={{ $faviconVersion }}@endif">
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600|cinzel:400,500,600" rel="stylesheet" />
