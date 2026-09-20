@@ -77,4 +77,45 @@
     .help {
         @apply text-sm text-zinc-400;
     }
+
+    .featured-carousel-stage {
+        @apply relative h-[14rem] overflow-hidden sm:h-[22rem] lg:h-[23rem];
+    }
+
+    .featured-carousel-slide {
+        @apply absolute top-0 left-1/2 w-[min(72vw,30rem)] -translate-x-1/2 scale-75 opacity-0 transition-all duration-500 ease-out;
+    }
+
+    .featured-carousel-slide.is-active {
+        @apply z-20 scale-100 opacity-100;
+    }
+
+    .featured-carousel-slide.is-previous,
+    .featured-carousel-slide.is-next {
+        @apply z-10 scale-90 opacity-35 saturate-50;
+    }
+
+    .featured-carousel-slide.is-previous {
+        translate: calc(-50% - min(55vw, 32rem)) 0;
+    }
+
+    .featured-carousel-slide.is-next {
+        translate: calc(-50% + min(55vw, 32rem)) 0;
+    }
+
+    .featured-carousel-slide.is-hidden {
+        @apply pointer-events-none z-0;
+    }
+
+    .featured-carousel-control {
+        @apply absolute top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-zinc-950/55 text-zinc-100 shadow-lg shadow-black/30 backdrop-blur transition hover:border-[#c7a867]/60 hover:bg-zinc-900/80 hover:text-[#dfcea0];
+    }
+
+    .featured-carousel-control-previous {
+        @apply left-2 sm:left-6;
+    }
+
+    .featured-carousel-control-next {
+        @apply right-2 sm:right-6;
+    }
 }
