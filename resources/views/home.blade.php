@@ -3,6 +3,20 @@
 @section('title', 'Tiny Treasures')
 
 @section('content')
+    @php
+        $nextClass = $upcomingClasses->first();
+    @endphp
+
+    @if ($nextClass)
+        <section class="mx-auto mb-8 max-w-3xl rounded-2xl border border-[#c7a867]/45 bg-[#c7a867]/10 px-5 py-4 text-center">
+            <p class="text-sm text-zinc-100">
+                Sign up for <span class="font-semibold">{{ $nextClass->title }}</span>
+                on {{ $nextClass->starts_at->format('M j, Y · g:ia') }}
+                <a href="{{ route('classes.show', $nextClass) }}" class="font-semibold text-[#dfcea0] underline decoration-[#c7a867]/70 underline-offset-2 hover:text-white">here</a>.
+            </p>
+        </section>
+    @endif
+
     @if ($featuredItems->count())
         <section>
             <div class="flex items-end justify-between gap-4">

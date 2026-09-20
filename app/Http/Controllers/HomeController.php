@@ -31,7 +31,7 @@ class HomeController extends Controller
             ->get();
 
         $upcomingClasses = ClassListing::query()
-            ->where('starts_at', '>=', now()->subHours(6))
+            ->where('starts_at', '>=', now())
             ->orderBy('starts_at')
             ->take(5)
             ->get();
