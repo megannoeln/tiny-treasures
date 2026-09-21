@@ -3,39 +3,64 @@
 @section('title', 'Tiny Treasures')
 
 @section('content')
+    @php
+        $nextClass = $upcomingClasses->first();
+    @endphp
+
+    @if ($nextClass)
+        <section class="mx-auto mb-8 max-w-3xl rounded-2xl border border-[#c7a867]/45 bg-[#c7a867]/10 px-5 py-4 text-center">
+            <p class="text-sm text-zinc-100">
+                Sign up for our next class, <span class="font-semibold">{{ $nextClass->title }}</span>
+                on {{ $nextClass->starts_at->format('M j, Y · g:ia') }}
+                <a href="{{ route('classes.show', $nextClass) }}" class="font-semibold text-[#dfcea0] underline decoration-[#c7a867]/70 underline-offset-2 hover:text-white">here</a>.
+            </p>
+        </section>
+    @endif
+
     @if ($featuredItems->count())
         <section>
             <div class="flex items-end justify-between gap-4">
                 <div>
                     <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">Featured artwork</h2>
-                    <p class="mt-2 text-sm text-zinc-400">A few personal favorites.</p>
                 </div>
             </div>
 
-            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                @foreach ($featuredItems as $item)
-                    @php
-                        $href = $item->is_for_sale ? route('shop.show', $item) : route('portfolio.show', $item);
-                    @endphp
-                    <a href="{{ $href }}" class="card card-hover group overflow-hidden no-underline">
-                        <div class="aspect-[4/3] overflow-hidden bg-zinc-950">
-                            @if ($item->image_path)
-                                <img class="h-full w-full object-cover transition group-hover:scale-[1.02]" src="{{ asset('storage/'.$item->image_path) }}" alt="{{ $item->title }}">
-                            @else
-                                <div class="flex h-full items-center justify-center text-sm text-zinc-500">No image</div>
-                            @endif
-                        </div>
-                        <div class="p-4">
-                            <div class="inline-flex rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide {{ $item->is_for_sale ? 'border-[#5a3f66]/50 bg-[#5a3f66]/15 text-[#c8b6d1]' : 'border-[#c7a867]/45 bg-[#c7a867]/12 text-[#dfcea0]' }}">
-                                {{ $item->is_for_sale ? 'Shop' : 'Portfolio' }}
+            <div class="relative mt-6" data-featured-carousel>
+                <div
+                    id="featured-artwork-slides"
+                    class="featured-carousel-stage"
+                    data-featured-carousel-track
+                    aria-live="polite"
+                >
+                    @foreach ($featuredItems as $item)
+                        <article
+                            class="featured-carousel-slide card overflow-hidden {{ $loop->first ? 'is-active' : 'pointer-events-none is-hidden' }}"
+                            data-featured-carousel-slide
+                            aria-hidden="{{ $loop->first ? 'false' : 'true' }}"
+                        >
+                            <div class="aspect-[4/3] overflow-hidden bg-zinc-950">
+                                @if ($item->image_path)
+                                    <img class="h-full w-full object-cover" src="{{ asset('storage/'.$item->image_path) }}" alt="{{ $item->title }}">
+                                @else
+                                    <div class="flex h-full items-center justify-center text-sm text-zinc-500">No image</div>
+                                @endif
                             </div>
-                            <div class="mt-1 font-medium">{{ $item->title }}</div>
-                            <div class="mt-3 text-xs font-semibold tracking-wide text-zinc-300 opacity-0 translate-y-1 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                                View details →
-                            </div>
-                        </div>
-                    </a>
-                @endforeach
+                        </article>
+                    @endforeach
+                </div>
+
+                @if ($featuredItems->count() > 1)
+                    <button type="button" class="featured-carousel-control featured-carousel-control-previous" data-featured-carousel-previous aria-controls="featured-artwork-slides" aria-label="Show previous artwork">
+                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="m14 6-6 6 6 6" />
+                        </svg>
+                    </button>
+                    <button type="button" class="featured-carousel-control featured-carousel-control-next" data-featured-carousel-next aria-controls="featured-artwork-slides" aria-label="Show next artwork">
+                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="m10 6 6 6-6 6" />
+                        </svg>
+                    </button>
+                @endif
             </div>
         </section>
     @endif
@@ -44,7 +69,7 @@
         <div class="flex items-end justify-between gap-4">
             <div>
                 <h2 class="font-serif text-[1.7rem] font-semibold tracking-wide">Upcoming</h2>
-                <p class="mt-2 text-sm text-zinc-400">These are the places you will find us soon!</p>
+                <p class="mt-2 text-sm text-zinc-400">Where the mossy path leads us next.</p>
             </div>
         </div>
 
