@@ -91,7 +91,6 @@
                 </a>
 
                 <nav class="hidden items-center gap-5 text-sm text-zinc-300 sm:flex">
-                    <a class="no-underline hover:text-[#5a3f66]" href="{{ route('portfolio.index') }}">Portfolio</a>
                     <a class="no-underline hover:text-[#5a3f66]" href="{{ route('shop.index') }}">Shop</a>
                     <a class="no-underline hover:text-[#5a3f66]" href="{{ route('classes.index') }}">Classes</a>
                     <a class="no-underline hover:text-[#5a3f66]" href="{{ route('about') }}">About</a>
@@ -131,7 +130,6 @@
             <div class="hidden border-t border-zinc-800 bg-zinc-950/95 sm:hidden" id="mobile-nav" data-mobile-nav>
                 <nav class="mx-auto max-w-6xl px-4 py-4 text-sm text-zinc-200">
                     <div class="grid gap-2">
-                        <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('portfolio.index') }}">Portfolio</a>
                         <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('shop.index') }}">Shop</a>
                         <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('classes.index') }}">Classes</a>
                         <a class="rounded-xl px-3 py-2 no-underline hover:bg-zinc-900/40 hover:text-[#5a3f66]" href="{{ route('about') }}">About</a>
