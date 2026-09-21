@@ -32,6 +32,7 @@ class HomeController extends Controller
 
         $upcomingClasses = ClassListing::query()
             ->where('starts_at', '>=', now())
+            ->where('sold_out', false)
             ->orderBy('starts_at')
             ->take(5)
             ->get();
