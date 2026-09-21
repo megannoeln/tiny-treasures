@@ -21,7 +21,6 @@ class HomeController extends Controller
                     });
             })
             ->orderByDesc('created_at')
-            ->take(8)
             ->get();
 
         $upcomingEvents = Event::query()

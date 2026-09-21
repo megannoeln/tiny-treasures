@@ -38,8 +38,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 Route::get('/', HomeController::class)->name('home');
-Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::get('/portfolio/{artwork}', [PortfolioController::class, 'show'])->name('portfolio.show');
+// Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
+// Route::get('/portfolio/{artwork}', [PortfolioController::class, 'show'])->name('portfolio.show');
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/shop/{artwork}', [ShopController::class, 'show'])->name('shop.show');
